@@ -1,48 +1,40 @@
-
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    Image
 } from 'react-native';
 
 export default class YoMama extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.gridView}>
+              <Image source={require('./images/YoMaMaText.png')} style={styles.imgTitle}/>
+              <Text style={styles.baseText}>Mommy, How many weeks have I been in your tummy?</Text>
+              <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    gridView: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems:'center'
+    },
+    imgTitle: {
+        width: 280, height: 80,
+        marginBottom: 80
+    },
+    baseText: {
+        // fontFamily: 'DK_Crayon_Crumble',
+        fontSize: 20,
+        margin: 40
+    },
 });
 
 AppRegistry.registerComponent('YoMama', () => YoMama);
